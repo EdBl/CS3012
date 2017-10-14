@@ -3,7 +3,7 @@ package ancestors;
 public class Node {
 
 	public int value;
-	public Node left, right, parent;
+	private Node left, right, parent;
 	
 	public Node(Node parent, int value){
 		this.parent = parent;
@@ -16,6 +16,18 @@ public class Node {
 	
 	public void addRight(int value){
 		right = new Node(this, value);
+	}
+	
+	public Node left(){
+		return left;
+	}
+	
+	public Node right(){
+		return right;
+	}
+	
+	public Node parent(){
+		return parent;
 	}
 	
 }

@@ -8,12 +8,20 @@ public class Tree {
 		root = new Node(null, rootValue);
 	}
 	
+	public void addLeft(int value){
+		root.addLeft(value);
+	}
+	
+	public void addRight(int value){
+		root.addRight(value);
+	}
+	
 	public Node left(){
-		return root.left;
+		return root.left();
 	}
 	
 	public Node right(){
-		return root.right;
+		return root.right();
 	}
 	
 	public Node getLowestCommonAncestor(Node a, Node b){
