@@ -9,9 +9,9 @@ public class Testing {
 	
 	
 	
-	/** Check if I added the trees in correctly in setUp() */
+	/** Checks if I set up the trees correctly in getTreeA() and getTreeB() */
 	@Test
-	public void areTreesSetUpCorrectly(){
+	public void testTreesSetUpCorrectly(){
 		Tree a = getTreeA();
 		Tree b = getTreeB();
 
@@ -26,6 +26,35 @@ public class Testing {
 		assertEquals("A node of tree B", 10, b.left().right().right().value);
 		assertEquals("A node of tree B", 6,  b.right().right().value);
 	}
+	
+	/** Checks if parents are pointed to correctly. */
+	@Test
+	public void testParents(){
+		Tree a = getTreeA();
+		
+		assertEquals("Check root", a.root.parent(), null);
+		assertEquals("A node of tree A", a.root,  a.left().parent());
+		assertEquals("A node of tree A", a.left().right(), a.left().right().right().parent());
+	}
+	
+	
+	/** Checks if finding the Lowest Common Ancestor works in the regular case. */
+	@Test
+	public void testLcaRegular(){
+		Tree a = getTreeA();
+		
+		assertEquals("Root is LCA, nodes are at same depth", a.root, a.getLowestCommonAncestor(a.left(), a.right()));
+		assertEquals("Root is LCA, nodes are at different depths", a.root, a.getLowestCommonAncestor(a.left(), a.right().right().left()));
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	/** Please view the README.md to see a diagram of this tree. */
 	private Tree getTreeA(){
