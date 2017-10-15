@@ -45,6 +45,7 @@ public class Testing {
 		
 		assertEquals("Root is LCA, nodes are at same depth", a.root, a.getLowestCommonAncestor(a.left(), a.right()));
 		assertEquals("Root is LCA, nodes are at different depths", a.root, a.getLowestCommonAncestor(a.left(), a.right().right().left()));
+		assertEquals("Root is LCA, nodes are at different depths", a.root, a.getLowestCommonAncestor(a.left(), a.right().right().left()));
 	}
 	
 	
