@@ -45,8 +45,45 @@ public class Testing {
 		
 		assertEquals("Root is LCA, nodes are at same depth", a.root, a.getLowestCommonAncestor(a.left(), a.right()));
 		assertEquals("Root is LCA, nodes are at different depths", a.root, a.getLowestCommonAncestor(a.left(), a.right().right().left()));
-		assertEquals("Root is LCA, nodes are at different depths", a.root, a.getLowestCommonAncestor(a.left(), a.right().right().left()));
+		
+		assertEquals("A node is LCA, nodes are at same depth", a.left(), a.getLowestCommonAncestor(a.left().left(), a.left().right()));
+		assertEquals("A node is LCA, nodes are at different depths", a.left(), a.getLowestCommonAncestor(a.left().left(), a.left().right().left()));
 	}
+	
+	/** Checks if finding the Lowest Common Ancestor works when both params of getLowestCommonAncestor are the same node. */
+	@Test
+	public void testLcaSameNodes(){
+		Tree a = getTreeA();
+		
+		Node n = a.left().right().right();
+		Node expected = a.left().right();
+		assertEquals("Getting LCA of the same nodes", expected, a.getLowestCommonAncestor(n, n));
+		
+	}
+	
+	/** Checks if finding the Lowest Common Ancestor works when one node is the parent of the second node. */
+	@Test
+	public void testLcaOneIsParentOfOther(){
+		Tree a = getTreeA();
+		
+		assertEquals("Getting LCA when one node is the parent of the second node", a.left(), a.getLowestCommonAncestor(a.left().right().right(), a.left().right()));
+	}
+	
+	/** Checks if finding the Lowest Common Ancestor works when one node is a root and the other node is a node. */
+	@Test
+	public void testLcaRootAndNode(){
+		Tree a = getTreeA();
+		
+		assertEquals("Getting LCA when one node is a root and the other node is a node", null, a.getLowestCommonAncestor(a.left().right().right(), a.root));
+	}
+	
+	/** Checks if finding the Lowest Common Ancestor works when there are no nodes other than the tree's root. */
+	@Test
+	public void testLcaNodelessTree(){
+		Tree t = new Tree(5);
+		assertEquals("What is the LCA of the root", null, t.getLowestCommonAncestor(t.root, t.root));
+	}
+	
 	
 	
 	

@@ -5,7 +5,7 @@ import java.util.Collections;
 
 public class Tree {
 
-	public Node root;
+	protected Node root;
 	
 	public Tree(int rootValue){
 		root = new Node(null, rootValue);
