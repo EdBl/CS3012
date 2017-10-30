@@ -1,0 +1,73 @@
+package ancestors;
+
+import junit.framework.TestCase;
+
+import org.junit.Test;
+
+public class Testing extends TestCase {
+
+	/* Please view the README.md to see a diagram of these trees. */
+	private Tree a, b;
+	
+	
+	/** Check if I added the trees in correctly in setUp() */
+	@Test
+	public void areTreesSetUpCorrectly(){
+		assertEquals(4, 2+2);
+	}
+	
+	
+	
+	
+	
+
+	@Override
+	protected void setUp() throws Exception {
+		
+		//1 Create tree A
+		a = new Tree(2);
+		
+		a.addLeft(7);
+		a.left().addLeft(2);
+		a.left().addRight(6);
+		a.left().right().addLeft(5);
+		a.left().right().addRight(11);
+		
+		a.addRight(5);
+		a.right().addRight(9);
+		a.right().right().addLeft(4);
+		//1
+		
+		
+		
+		//2 Create tree B
+		b = new Tree(0);
+		
+		b.addLeft(1);
+		b.addRight(2);
+		
+		b.left().addLeft(3);
+		b.left().addRight(4);
+		
+		b.left().left().addLeft(7);
+		b.left().left().addRight(8);
+		
+		b.left().right().addLeft(9);
+		b.left().right().addRight(10);
+		
+		b.right().addLeft(5);
+		b.right().addRight(6);
+
+		b.right().left().addLeft(11);
+		b.right().left().addRight(12);
+		
+		b.right().right().addLeft(13);
+		b.right().right().addRight(14);
+		//2
+		
+		super.setUp();
+	}
+	
+	
+
+}

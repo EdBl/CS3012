@@ -1,0 +1,216 @@
+!SESSION 2017-10-14 18:30:06.219 -----------------------------------------------
+eclipse.buildId=4.4.2.M20150204-1700
+java.version=1.8.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_IE
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.recommenders.apidocs.rcp 4 0 2017-10-14 18:30:08.114
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.recommenders.apidocs.rcp [316]
+  Unresolved requirement: Require-Bundle: org.eclipse.recommenders.apidocs; bundle-version="2.0.0"
+    -> Bundle-SymbolicName: org.eclipse.recommenders.apidocs; bundle-version="2.1.9.v20140917-1240"
+       org.eclipse.recommenders.apidocs [315]
+         Unresolved requirement: Require-Bundle: org.eclipse.recommenders.models
+           -> Bundle-SymbolicName: org.eclipse.recommenders.models; bundle-version="2.1.9.v20140917-1240"
+              org.eclipse.recommenders.models [324]
+                Unresolved requirement: Import-Package: org.apache.maven.repository.internal; version="[3.1.0,3.2.0)"
+                  -> Export-Package: org.apache.maven.repository.internal; bundle-symbolic-name="org.eclipse.aether.maven"; bundle-version="3.1.0.v20140706-2237"; version="3.1.0"; uses:="com.google.inject,javax.inject,org.eclipse.aether,org.eclipse.aether.artifact,org.eclipse.aether.deployment,org.eclipse.aether.impl,org.eclipse.aether.installation,org.eclipse.aether.repository,org.eclipse.aether.resolution,org.eclipse.aether.spi.locator,org.eclipse.aether.spi.log"
+                     org.eclipse.aether.maven [48]
+                       Unresolved requirement: Import-Package: org.eclipse.aether; version="[0.9.1,1.1.0)"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.recommenders.models 4 0 2017-10-14 18:30:08.119
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.recommenders.models [324]
+  Unresolved requirement: Import-Package: org.apache.maven.repository.internal; version="[3.1.0,3.2.0)"
+    -> Export-Package: org.apache.maven.repository.internal; bundle-symbolic-name="org.eclipse.aether.maven"; bundle-version="3.1.0.v20140706-2237"; version="3.1.0"; uses:="com.google.inject,javax.inject,org.eclipse.aether,org.eclipse.aether.artifact,org.eclipse.aether.deployment,org.eclipse.aether.impl,org.eclipse.aether.installation,org.eclipse.aether.repository,org.eclipse.aether.resolution,org.eclipse.aether.spi.locator,org.eclipse.aether.spi.log"
+       org.eclipse.aether.maven [48]
+         Unresolved requirement: Import-Package: org.eclipse.aether; version="[0.9.1,1.1.0)"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.egit.ui 2 0 2017-10-14 18:31:59.692
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\eddy'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2017-10-15 00:09:01.787
+!MESSAGE Unknown JDT proposal type 'class org.eclipse.jdt.internal.ui.text.java.LazyJavaCompletionProposal' ('@deprecated'). Returning original proposal instead.
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2017-10-15 00:09:01.789
+!MESSAGE Unknown JDT proposal type 'class org.eclipse.jdt.internal.ui.text.java.LazyJavaCompletionProposal' ('@serialData'). Returning original proposal instead.
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2017-10-15 00:09:01.791
+!MESSAGE Unknown JDT proposal type 'class org.eclipse.jdt.internal.ui.text.java.LazyJavaCompletionProposal' ('@throws'). Returning original proposal instead.
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2017-10-15 00:09:01.793
+!MESSAGE Unknown JDT proposal type 'class org.eclipse.jdt.internal.ui.text.javadoc.JavadocInlineTagCompletionProposal' ('{@code}'). Returning original proposal instead.
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2017-10-15 00:09:01.794
+!MESSAGE Unknown JDT proposal type 'class org.eclipse.jdt.internal.ui.text.java.LazyJavaCompletionProposal' ('@exception'). Returning original proposal instead.
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2017-10-15 00:09:01.796
+!MESSAGE Unknown JDT proposal type 'class org.eclipse.jdt.internal.ui.text.javadoc.JavadocInlineTagCompletionProposal' ('{@literal}'). Returning original proposal instead.
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2017-10-15 00:09:01.797
+!MESSAGE Unknown JDT proposal type 'class org.eclipse.jdt.internal.ui.text.javadoc.JavadocInlineTagCompletionProposal' ('{@linkplain}'). Returning original proposal instead.
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2017-10-15 00:09:01.799
+!MESSAGE Unknown JDT proposal type 'class org.eclipse.jdt.internal.ui.text.java.LazyJavaCompletionProposal' ('@category'). Returning original proposal instead.
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2017-10-15 00:09:01.801
+!MESSAGE Unknown JDT proposal type 'class org.eclipse.jdt.internal.ui.text.java.LazyJavaCompletionProposal' ('@return'). Returning original proposal instead.
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2017-10-15 00:09:01.802
+!MESSAGE Unknown JDT proposal type 'class org.eclipse.jdt.internal.ui.text.javadoc.JavadocInlineTagCompletionProposal' ('{@value}'). Returning original proposal instead.
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2017-10-15 00:09:01.804
+!MESSAGE Unknown JDT proposal type 'class org.eclipse.jdt.internal.ui.text.java.LazyJavaCompletionProposal' ('@param'). Returning original proposal instead.
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2017-10-15 00:09:01.806
+!MESSAGE Unknown JDT proposal type 'class org.eclipse.jdt.internal.ui.text.javadoc.JavadocInlineTagCompletionProposal' ('{@docRoot}'). Returning original proposal instead.
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2017-10-15 00:09:01.807
+!MESSAGE Unknown JDT proposal type 'class org.eclipse.jdt.internal.ui.text.java.LazyJavaCompletionProposal' ('@see'). Returning original proposal instead.
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2017-10-15 00:09:01.808
+!MESSAGE Unknown JDT proposal type 'class org.eclipse.jdt.internal.ui.text.javadoc.JavadocInlineTagCompletionProposal' ('{@inheritDoc}'). Returning original proposal instead.
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2017-10-15 00:09:01.810
+!MESSAGE Unknown JDT proposal type 'class org.eclipse.jdt.internal.ui.text.java.LazyJavaCompletionProposal' ('@since'). Returning original proposal instead.
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2017-10-15 00:09:01.812
+!MESSAGE Unknown JDT proposal type 'class org.eclipse.jdt.internal.ui.text.javadoc.JavadocInlineTagCompletionProposal' ('{@link}'). Returning original proposal instead.
+!SESSION 2017-10-15 16:00:51.964 -----------------------------------------------
+eclipse.buildId=4.4.2.M20150204-1700
+java.version=1.8.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_IE
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.recommenders.apidocs.rcp 4 0 2017-10-15 16:00:55.431
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.recommenders.apidocs.rcp [316]
+  Unresolved requirement: Require-Bundle: org.eclipse.recommenders.apidocs; bundle-version="2.0.0"
+    -> Bundle-SymbolicName: org.eclipse.recommenders.apidocs; bundle-version="2.1.9.v20140917-1240"
+       org.eclipse.recommenders.apidocs [315]
+         Unresolved requirement: Require-Bundle: org.eclipse.recommenders.models
+           -> Bundle-SymbolicName: org.eclipse.recommenders.models; bundle-version="2.1.9.v20140917-1240"
+              org.eclipse.recommenders.models [324]
+                Unresolved requirement: Import-Package: org.apache.maven.repository.internal; version="[3.1.0,3.2.0)"
+                  -> Export-Package: org.apache.maven.repository.internal; bundle-symbolic-name="org.eclipse.aether.maven"; bundle-version="3.1.0.v20140706-2237"; version="3.1.0"; uses:="com.google.inject,javax.inject,org.eclipse.aether,org.eclipse.aether.artifact,org.eclipse.aether.deployment,org.eclipse.aether.impl,org.eclipse.aether.installation,org.eclipse.aether.repository,org.eclipse.aether.resolution,org.eclipse.aether.spi.locator,org.eclipse.aether.spi.log"
+                     org.eclipse.aether.maven [48]
+                       Unresolved requirement: Import-Package: org.eclipse.aether; version="[0.9.1,1.1.0)"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.recommenders.models 4 0 2017-10-15 16:00:55.435
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.recommenders.models [324]
+  Unresolved requirement: Import-Package: org.apache.maven.repository.internal; version="[3.1.0,3.2.0)"
+    -> Export-Package: org.apache.maven.repository.internal; bundle-symbolic-name="org.eclipse.aether.maven"; bundle-version="3.1.0.v20140706-2237"; version="3.1.0"; uses:="com.google.inject,javax.inject,org.eclipse.aether,org.eclipse.aether.artifact,org.eclipse.aether.deployment,org.eclipse.aether.impl,org.eclipse.aether.installation,org.eclipse.aether.repository,org.eclipse.aether.resolution,org.eclipse.aether.spi.locator,org.eclipse.aether.spi.log"
+       org.eclipse.aether.maven [48]
+         Unresolved requirement: Import-Package: org.eclipse.aether; version="[0.9.1,1.1.0)"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.egit.ui 2 0 2017-10-15 16:01:26.116
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\eddy'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+!SESSION 2017-10-15 16:33:03.832 -----------------------------------------------
+eclipse.buildId=4.4.2.M20150204-1700
+java.version=1.8.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_IE
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.recommenders.apidocs.rcp 4 0 2017-10-15 16:33:05.668
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.recommenders.apidocs.rcp [316]
+  Unresolved requirement: Require-Bundle: org.eclipse.recommenders.apidocs; bundle-version="2.0.0"
+    -> Bundle-SymbolicName: org.eclipse.recommenders.apidocs; bundle-version="2.1.9.v20140917-1240"
+       org.eclipse.recommenders.apidocs [315]
+         Unresolved requirement: Require-Bundle: org.eclipse.recommenders.models
+           -> Bundle-SymbolicName: org.eclipse.recommenders.models; bundle-version="2.1.9.v20140917-1240"
+              org.eclipse.recommenders.models [324]
+                Unresolved requirement: Import-Package: org.apache.maven.repository.internal; version="[3.1.0,3.2.0)"
+                  -> Export-Package: org.apache.maven.repository.internal; bundle-symbolic-name="org.eclipse.aether.maven"; bundle-version="3.1.0.v20140706-2237"; version="3.1.0"; uses:="com.google.inject,javax.inject,org.eclipse.aether,org.eclipse.aether.artifact,org.eclipse.aether.deployment,org.eclipse.aether.impl,org.eclipse.aether.installation,org.eclipse.aether.repository,org.eclipse.aether.resolution,org.eclipse.aether.spi.locator,org.eclipse.aether.spi.log"
+                     org.eclipse.aether.maven [48]
+                       Unresolved requirement: Import-Package: org.eclipse.aether; version="[0.9.1,1.1.0)"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.recommenders.models 4 0 2017-10-15 16:33:05.673
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.recommenders.models [324]
+  Unresolved requirement: Import-Package: org.apache.maven.repository.internal; version="[3.1.0,3.2.0)"
+    -> Export-Package: org.apache.maven.repository.internal; bundle-symbolic-name="org.eclipse.aether.maven"; bundle-version="3.1.0.v20140706-2237"; version="3.1.0"; uses:="com.google.inject,javax.inject,org.eclipse.aether,org.eclipse.aether.artifact,org.eclipse.aether.deployment,org.eclipse.aether.impl,org.eclipse.aether.installation,org.eclipse.aether.repository,org.eclipse.aether.resolution,org.eclipse.aether.spi.locator,org.eclipse.aether.spi.log"
+       org.eclipse.aether.maven [48]
+         Unresolved requirement: Import-Package: org.eclipse.aether; version="[0.9.1,1.1.0)"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.egit.ui 2 0 2017-10-15 16:33:19.529
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\eddy'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.

@@ -1,0 +1,16 @@
+package ancestors;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class Testing {
+
+	
+	
+	@Test
+	public void testNull(){
+		assertEquals(5, 5);
+	}
+
+}
