@@ -1,4 +1,4 @@
-# Task 1 - Lowest Common Ancestor Problem
+# Task 2 - Lowest Common Ancestor Problem
 A solution to the Lowest Common Ancestor Problem and extensive testing to make sure the solution is valid.
 
 
