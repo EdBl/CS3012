@@ -1,21 +1,26 @@
 
 ==================== FINAL INTERFACE ====================
-2017-10-31 12:14:29.9057435 UTC
+2017-10-31 13:40:24.5695098 UTC
 
 interface main@main:Trees 8002
-  interface hash: 45397f4d4a480e32c34eef048c39c119
-  ABI hash: 5a8e22d89cfedd5780f94f54eeddaa65
-  export-list hash: d83706b0ad04a1a6bc67b3ed275d704d
+  interface hash: 8d965211b6ae49fb96cdfb6ee8944077
+  ABI hash: 6b9360dcb9ffd27e91e13ed42cca94be
+  export-list hash: d93632267c6f8c7df84cd15cec9bc439
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: 7825ce622124759228f465c6a43debe3
   sig of: Nothing
   used TH splices: False
   where
 exports:
+  Trees.addAllParents
   Trees.beginParents
+  Trees.eliminateNonLCAs
+  Trees.getDirectParents
+  Trees.getLCAs
   Trees.getParents
   Trees.getParentsH
   Trees.removeDuplicates
+  Trees.removeIfDuplicated
   Trees.view
   Trees.Node{Trees.Node}
 module dependencies:
@@ -27,7 +32,9 @@ family instance modules: base-4.9.1.0:Control.Applicative
                          base-4.9.1.0:Data.Monoid base-4.9.1.0:Data.Type.Equality
                          base-4.9.1.0:GHC.Generics base-4.9.1.0:GHC.IO.Exception
                          base-4.9.1.0:GHC.TypeLits
+import  -/  base-4.9.1.0:Data.Foldable 254e836c2d813d34e47feb29bb8d40ed
 import  -/  base-4.9.1.0:Data.List 7349774f430841349c90dfd1144aea97
+import  -/  base-4.9.1.0:Data.OldList c9282ee91951bdcbd918d2960562c007
 import  -/  base-4.9.1.0:GHC.Base 4caea1123ecf4b46e27cbccd6d279377
 import  -/  base-4.9.1.0:GHC.List d11eb227c1c6fbfd89bb781d72eaea0d
 import  -/  base-4.9.1.0:GHC.Show eca5834daba3b6a2bbbe64ab52056707
@@ -160,15 +167,50 @@ b3ca2a9f4207ebc1f26c5a12ad1b5f7d
   $trModule2 :: GHC.Types.TrName
   {- HasNoCafRefs, Strictness: m1,
      Unfolding: (GHC.Types.TrNameS "main"#) -}
+bef74f8cbf0ee9ed4f6f5da8f213625c
+  $wgetLCAs :: [Trees.Node] -> Trees.Node -> [Trees.Node]
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><L,1*U(A,1*U)>,
+     Inline: [0],
+     Unfolding: (\ (ww :: [Trees.Node]) (w :: Trees.Node) ->
+                 Trees.removeIfDuplicated
+                   (Trees.addAllParents
+                      (Data.OldList.intersectBy
+                         @ Trees.Node
+                         Trees.$fEqNode_$c==
+                         (Trees.removeDuplicates (Trees.getParentsH ww))
+                         (case w of wild { Trees.Node s n ->
+                          Trees.removeDuplicates (Trees.getParentsH n) })))) -}
 52def62fb1bcb1592f10fdf01476ec0e
   data Node = Node GHC.Base.String [Trees.Node]
     RecFlag: Recursive
+c67a3b052110222307e0982c63f6d995
+  addAllParents :: [Trees.Node] -> [Trees.Node]
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U> -}
 6f699284c7f1fba7aa39f5cc60d211e2
   beginParents :: Trees.Node -> [Trees.Node]
   {- Arity: 1, HasNoCafRefs, Strictness: <S(LS),1*U(A,1*U)>,
      Unfolding: InlineRule (1, True, False)
                 (\ (ds :: Trees.Node) ->
                  case ds of wild { Trees.Node ds1 n -> Trees.getParentsH n }) -}
+1c475f072768bb8287113e1d2455b353
+  eliminateNonLCAs :: [Trees.Node] -> [Trees.Node]
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (n :: [Trees.Node]) ->
+                 Trees.removeIfDuplicated (Trees.addAllParents n)) -}
+4b38db899e31dbde1a3903e5379a669a
+  getDirectParents :: Trees.Node -> [Trees.Node]
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(LS),1*U(A,1*U)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Trees.Node) ->
+                 case ds of wild { Trees.Node ds1 n -> n }) -}
+8ad2139fe0c2b2f3be12de95e32de53f
+  getLCAs :: Trees.Node -> Trees.Node -> [Trees.Node]
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <S(LS),1*U(A,1*U)><L,1*U(A,1*U)>, Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, False)
+                (\ (w :: Trees.Node) (w1 :: Trees.Node) ->
+                 case w of ww { Trees.Node ww1 ww2 -> Trees.$wgetLCAs ww2 w1 }) -}
 c8990c7aee56e0e866543e28cf3414a1
   getParents :: Trees.Node -> [Trees.Node]
   {- Arity: 1, HasNoCafRefs, Strictness: <S(LS),1*U(A,1*U)>,
@@ -181,6 +223,9 @@ c8990c7aee56e0e866543e28cf3414a1
   {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U> -}
 4863e21fb0a738ffbe6dc2d56dd5c6b5
   removeDuplicates :: [Trees.Node] -> [Trees.Node]
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U> -}
+c2c06e79ce41757910e9a73810cf30fc
+  removeIfDuplicated :: [Trees.Node] -> [Trees.Node]
   {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U> -}
 141e736795b3ca98db6b39a1ffbef08c
   view :: [Trees.Node] -> GHC.Base.String
