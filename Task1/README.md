@@ -5,8 +5,8 @@ A solution to the Lowest Common Ancestor Problem and extensive testing to make s
 ## Overview
 
 ### General info
-- All of the implementation code is in `src/Trees.hs`.
-- All of the testing code is in `test/Spec.hs`.
+- All of the implementation code is in `task1/src/Trees.hs`.
+- All of the testing code is in `task1/test/Spec.hs`.
 - I was using [Stack](https://docs.haskellstack.org/en/stable/README/ "Stack") for this, to run the tests I would recommend getting Stack (if you don't already have it). 
 To run the tests use `stack test` in the command line.
 
@@ -21,7 +21,7 @@ Each node has a key and an array of pointers to its parent nodes. I am finding t
 
 
 ### Testing
-All the tests are located in `test/Spec.hs`. In the next section are images of the trees that were used for testing.
+All the tests are located in `task1/test/Spec.hs`. In the next section are images of the trees that were used for testing.
 
 ## The Trees from `test/Spec.hs`
 | Tree A | Tree B |
