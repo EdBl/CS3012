@@ -1,0 +1,115 @@
+/*
+    Background: #374051
+    Green: #89D0A7
+    Blue: #66BDDA
+*/
+
+body {
+    background-color: #374051;
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Open Sans'
+}
+
+.loginHolder {
+    margin: 100px 38%
+}
+
+.loginHolder input {
+    display: block;
+    background-color: #CCC;
+    margin: 10px 20%;
+    width: 60%;
+    padding: 8px;
+    border-radius: 40px;
+    border: none;
+    text-align: center;
+    transition: ease 1s;
+}
+
+.loginHolder input:focus {
+    background-color: white;
+    outline: none;
+}
+
+.loginHolder a {
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    margin: 15px 20%;
+    padding: 12px 8px;
+    width: 60%;
+    border-radius: 40px;
+    color: white;    
+    
+    background: #89D0A7;
+    background: linear-gradient(to right, #89D0A7, #66BDDA);  
+    
+    transition: ease 0.25s;  
+}
+
+.loginHolder a:hover {
+    box-shadow: 0px 3px 20px #000;
+    transform: translateY(-5px);
+}
+
+.loginHolder img {
+    width: 40%;
+    margin: 0 30%;
+    padding: 8px;
+}
+
+.statusHolder {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    background: white;
+    box-shadow: 0px 3px 30px #000;
+    margin: 0;
+}
+
+.invisible {
+    opacity: 0;
+    visibility: hidden;
+}
+
+
+#status {
+    transition: 1s;
+    width: 100%;
+    padding: 10px 0;
+    text-align: center;
+    color: white;
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    margin: auto;
+}
+
+
+
+#spinner {
+    width: 50px;
+    height: 50px;
+    border: 2px solid #777;
+    border-top: 2px solid #89D0A7;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 3em;
+    left: 0px;
+    right: 0px;
+    margin: auto;
+    animation: spin 2.5s infinite;
+    animation-timing-function: ease;
+    
+    transition: 1s;
+}
+
+
+
+@keyframes spin {
+    from{ transform: rotate(0deg); }
+    to{ transform: rotate(1080deg); }
+}
