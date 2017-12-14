@@ -11,8 +11,19 @@ body {
     font-family: 'Open Sans'
 }
 
+
+.loginHolder.shrunk {
+    margin: 0 38%;
+    opacity: 0;
+    visibility: hidden;
+    height: 0;
+}
+
+
 .loginHolder {
-    margin: 100px 38%
+    margin: 100px 38%;
+    transition: ease-out 0.75s;
+    opacity: 1;
 }
 
 .loginHolder input {
@@ -76,30 +87,36 @@ body {
 
 
 #status {
-    transition: 1s;
+    transition: 0.25s;
     width: 100%;
-    padding: 10px 0;
+    padding: 1.5em 0;
     text-align: center;
     color: white;
     position: fixed;
-    bottom: 0px;
+    bottom: -2px;
     left: 0px;
     right: 0px;
     margin: auto;
+    background: #89D0A7;
+    background: linear-gradient(to right, #89D0A7, #66BDDA);
+    box-shadow: 0 0 50px #111;
+}
+
+#status.invisible {
+    bottom: -3em;
 }
 
 
 
 #spinner {
-    width: 50px;
-    height: 50px;
-    border: 2px solid #777;
-    border-top: 2px solid #89D0A7;
+    width: 3em;
+    height: 3em;
+    border: 2px solid #66BDDA;
+    border-top: 2px solid white;
     border-radius: 50%;
     position: fixed;
-    bottom: 3em;
-    left: 0px;
-    right: 0px;
+    bottom: 0.5em;
+    right: 2em;
     margin: auto;
     animation: spin 2.5s infinite;
     animation-timing-function: ease;
@@ -108,8 +125,143 @@ body {
 }
 
 
-
 @keyframes spin {
     from{ transform: rotate(0deg); }
     to{ transform: rotate(1080deg); }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#content {
+    
+    width: 100%;
+    overflow: hidden;
+    transition: 1s;
+}
+
+#sideHolder {
+    width: 20%;
+    float: left;
+}
+
+#mainHolder {
+    width: 80%;
+    float: left;
+}
+
+.repoTitle {
+    color: #89D0A7;
+    margin: 0;
+    padding: 5%;
+    font-size: 1.5em;
+    text-align: center
+}
+
+.repoClicker {
+    color: #CCC;
+    text-decoration: none;
+    display: block;
+    padding: 2%;
+    margin: 2% 0;
+    transition: 0.25s;
+}
+
+.repoClicker:hover {
+    color: white;
+}
+
+.repoClicker.selected {
+    background: #89D0A7;
+    background: linear-gradient(to right, #89D0A7, #66BDDA);  
+    color: white;
+    padding: 7% 2%;
+}
+
+#otherRepos {
+    margin-top: 30px;
+}
+
+#mainHolder {
+    background: white;
+    color: #777;
+    box-shadow: -2px 0 50px black;
+}
+
+#mainHolder pre {
+    padding: 5%;
+}
+
+#profileImage {
+    width: 50%;
+    margin: 10px 25%;
+    margin-top: 20px;
+}
+
+#profileName {
+    width: 100%;
+    text-align: center;
+    color: white;
+    margin-bottom: 50px;
+}
+
+#otherUsername {
+    background-color: #CCC;
+    margin: 10px 0 10px 2%;
+    width: 60%;
+    padding: 5% 1%;
+    border-top-left-radius: 40px;
+    border-bottom-left-radius: 40px;
+    border: none;
+    text-align: center;
+    transition: ease 1s;
+    font-family: 'Raleway';
+    font-size: 14px;
+}
+
+#otherUsername:focus {
+    background-color: white;
+    outline: none;
+}
+
+#sideHolder p {
+    padding: 5px;
+    margin: 0;
+    color: white;
+}
+
+#search {
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    padding: 5% 1%;
+    width: 30%;
+    margin: 0;
+    border-top-right-radius: 40px;
+    border-bottom-right-radius: 40px;
+    color: white;    
+    font-family: 'Raleway';
+    font-size: 14px;
+    
+    background: #89D0A7;
+    background: linear-gradient(to right, #89D0A7, #66BDDA);  
+    
+    transition: ease 0.25s;  
+}
+
+#search:hover {
+    box-shadow: 0px 3px 20px #000;
+    transform: translateY(-1.5px);
+}
+
