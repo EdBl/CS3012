@@ -41,9 +41,16 @@ function loadMyReposList(){
     
     statusLoading('Loading your repos...');
 
-    authorisedAccess(
+    var url = "https://api.github.com/user/repos";
 
-        "https://api.github.com/user/repos",
+    var cached = repoCache[url];
+    
+    if(cached != null){
+        console.log('Cache hit!');
+        onSuccess(cached);
+    } else authorisedAccess(
+
+        url,
 
         (result) => {
 
@@ -67,7 +74,12 @@ function loadOtherReposList(username){
 
     var url = "https://api.github.com/users/" + username + "/repos"
 
-    authorisedAccess(
+    var cached = repoCache[url];
+
+    if(cached != null){
+        console.log('Cache hit!');
+        onSuccess(cached);
+    } else authorisedAccess(
             
         url,
 
@@ -125,27 +137,18 @@ function setOtherReposMessage(message){
     $("#otherRepos").append("<p>" + message + "</p>");
 }
 
-/** Checks cache, if that url is not cached, downloads using username and passwords. */
 function authorisedAccess(url, onSuccess, onFail){
 
-    var cached = repoCache[url];
+    var auth = btoa(username + ":" + password);
+    
+    $.ajax({
 
-    if(cached != null){
-        console.log('Cache hit!');
-        onSuccess(cached);
-    } else {
+        headers: {'Authorization' : 'Basic ' + auth},
+        url: url, 
+        success: onSuccess,
+        error: onFail
 
-        var auth = btoa(username + ":" + password);
-        
-        $.ajax({
-
-            headers: {'Authorization' : 'Basic ' + auth},
-            url: url, 
-            success: onSuccess,
-            error: onFail
-
-        })
-    }
+    })
 
 }
 
@@ -166,9 +169,12 @@ function selectedRepo(url){
         url,
 
         (result) => {
-            $('#mainHolder').empty();
-            $('#mainHolder').append("<pre>" + JSON.stringify(result, null, "     ") + "</pre>");
-            statusHide();
+
+            // $('#mainHolder').empty();
+            // $('#mainHolder').append("<pre>" + JSON.stringify(result, null, "     ") + "</pre>");
+            
+            handleCommitHistory(result.commits_url.replace("{/sha}", ""));
+
         },
 
         (error) => {

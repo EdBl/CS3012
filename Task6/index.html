@@ -8,6 +8,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/status.js"></script>
+    <script src="js/commitHandling.js"></script>
   </head>
   <body>
 
@@ -44,7 +45,43 @@
 
       </div>
 
-      <div id="mainHolder"/>
+      <div id="mainHolder">
+
+        <div id="topBar">
+            
+            
+          <div class="holder left">
+            <h3 id="devName">Name</h3>
+            <p id="commitMessage">"Commit message"</p>
+          </div>
+
+          <div class="right">
+            <div class="holder">
+              <p id="processedIn">Data processing took 0ms</p>
+              <p id="displayedIn">Data displaying took 0ms</p>
+            </div>
+
+            <div class="holder">
+              <h3 id="commitHour">00:00</h3>
+              <p id="commitDate">01 Jan 2017</p>
+            </div>
+              
+          </div>
+
+
+        </div>
+          
+          <div id="controls">
+                <a href="javascript:left()">&larr;</a>
+                <h4 id="pageNumber">0 of 0</h4>
+                <a href="javascript:right()">&rarr;</a>
+            </div>
+
+        <div id="mainContent">
+            
+        </div>
+          
+      </div>
 
     </div>
       
