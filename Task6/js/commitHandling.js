@@ -93,7 +93,6 @@ function displayTree(url){
 
 }
 
-/** By default the tree extends downwards, so all the x and y coordinated */
 function drawTree(data){
 
     var startOfProcessing = new Date().getTime();
