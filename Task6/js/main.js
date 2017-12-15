@@ -7,7 +7,7 @@ var repoCache = {};
 
 
 function logIn(){
-    
+
     username = $('#username').val();
     password = $('#password').val();
 
@@ -182,4 +182,12 @@ function selectedRepo(url){
         }
     )
 }
+
+
+
+$(document).keydown(function(e) {
+    if(e.which == 37) left();
+    if(e.which == 39) right();
+    //e.preventDefault(); // prevent the default action (scroll / move caret)
+});
 

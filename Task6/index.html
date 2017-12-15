@@ -6,11 +6,17 @@
     <link rel="stylesheet" href="main.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans|Raleway" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://d3js.org/d3.v3.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/status.js"></script>
     <script src="js/commitHandling.js"></script>
   </head>
   <body>
+      
+      <div id="tooltipHolder" class="invisible">
+            <h3>Folder title</h3>
+            <p>Folder contents</p>
+        </div>
 
     <div class="loginHolder">
       <img src="images/github.png" alt="Github Logo">
@@ -59,6 +65,7 @@
             <div class="holder">
               <p id="processedIn">Data processing took 0ms</p>
               <p id="displayedIn">Data displaying took 0ms</p>
+              <p id="structure">The folder structure has 0 folders with 0 folders at its widest level.</p>
             </div>
 
             <div class="holder">
@@ -82,6 +89,9 @@
         </div>
           
       </div>
+        
+        
+        
 
     </div>
       
