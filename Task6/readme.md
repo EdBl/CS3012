@@ -20,19 +20,38 @@ Using the GitHub API to build a visualisation of the available data in order to 
 1. Hover over a folder name to see its contents.
 1. To view another repo, select an available one from the side bar or type in a different username into the search bar and press "GO".
 
+## What happens when...
+Quick, high level explanations of what happens behind the scenes after the user performs an action.
 
-## Images
-### 1. Log In
-![Log in](images/P1.png?raw=true)
+### On log in
+1. User logs in
+1. The user's account data is downloaded
+    1. Using links from the account data, a list of the user's private and public repos are downloaded and displayed
+    1. The first repo is selected by default (see "On repo selected in the side bar")
+1. My (EdBl) account data is downloaded
+    1. Using links from that data, a list of my public repos is downloaded and displayed
+	1. (This works in the same way as "On search for another username")
 
-### 2. Your repos
-![Your repos](images/P2.png?raw=true)
+### On search for another username
+1. The user enters the username whose repos they would like to view and presses "GO". Let's say the user entered EdBl for the purpose of simplifying the discussion to follow.
+1. EdBl's account data is downloaded.
+1. Using that data, a link to all of EdBl's public repos is used to download data on all of EdBl's public repos.
+1. On the sidebar, using the repo data, the user is presented with a list of EdBl's repos that the user may click on to view more info on.
 
-### 3. Other repos
-![Other repos](images/P3.png?raw=true)
+### On repo selected in the side bar
+1. The user clicks on a repo name in the side bar.
+1. Data on that repo is retrieved from cache or downloaded.
+1. That data is used to find a link to that repo's commit history (Github provides access to the 30 latest commits).
+1. That repo's commit history is retrieved from cache or dowloaded.
+1. The latest commit is chosen to be displayed for the user.
+1. "On commit selected" is run.
 
-### 4. Repo JSON
-![Repo JSON](images/P4.png?raw=true)
+### "On commit selected" or "On navigating through commit history"
+1. The user decides to view a commit from the repo, let's say commit 12 of 15 for the purpose of simplifying the discussion to follow.
+1. That commit's folder/file tree is retrieved from cache or downloaded from github.
+    1. If the tree is dowloaded, the tree is processed in order to make it D3 friendly and to drop data that is not required for the purposed of this application.
+    1. The processed tree is cached.
+1. D3 is used to display that tree.
 
 
 
